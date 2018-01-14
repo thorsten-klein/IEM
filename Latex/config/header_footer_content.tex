@@ -1,0 +1,37 @@
+%-------------------------------------------------------------------------------------------------------------------
+% KOPFZEILE (HEADER)
+%-------------------------------------------------------------------------------------------------------------------
+
+\renewcommand*\chapterpagestyle{scrheadings}	%Kapitelseite gleich normaler Seite
+\setheadsepline{0.5pt}
+%\setheadtopline{0.5pt}
+
+\ihead{
+	\vspace {0.3cm}
+	\includegraphics[height=1.2cm]{images/oth.jpg}
+	%\includegraphics[height=1cm]{images/logo.png} 
+}
+\chead{
+}
+\ohead[raggedright]{	
+	\thesistitlehead \\
+}
+
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% FUSSZEILE (FOOTER)
+%-------------------------------------------------------------------------------------------------------------------
+
+\setfootsepline{0.5pt}
+
+\ifoot{ 
+	\module, \today
+}
+\cfoot{
+	%\\ Stand: \today  
+	\\ Seite \thepage/\pageref{LastPage}
+}
+\ofoot[raggedright]{	
+	\myname, \kurs
+}

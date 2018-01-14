@@ -1,0 +1,64 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{pslatex}			%viel fetter
+%\usepackage{mathptmx} 			%viel fetter
+%\usepackage{ae,aecompl}		%minimal fetter
+%\usepackage{lmodern}			%minimal fetter
+%\usepackage{microtype}			%cm-super
+\usepackage[english, ngerman]{babel} 	% German new language/hyphenation
+\usepackage{setspace} 			% für Zeilenabstand
+\usepackage{textgreek} 			%greeks letters senkrecht					???
+\usepackage{scrpage2}			% Kopf / Fusszeile
+\usepackage{geometry}			%Seitenränder
+\usepackage{graphicx}			% Includegraphics
+%\usepackage{lastpage} 			%Use LastPage
+\usepackage{listings}			% Source Code integrieren
+\usepackage{color}				% Farben
+\usepackage[colorlinks,
+	pdfpagelabels=true,
+	linkcolor = black,
+	%plainpages = false,
+	%hypertexnames = false,
+	citecolor = black
+]{hyperref}						% TOC verlinken
+\usepackage{tocstyle}			% weniger Abstand im TOC
+\usepackage{scrhack}			% Fehler von listings ausblenden
+\usepackage{pdfpages}			% PDF includieren
+\usepackage{csquotes}
+
+\usepackage{caption}
+\captionsetup{font=small}
+\captionsetup[figure]{labelfont=bf,textfont=it}
+
+
+\usepackage{hyphenat}
+\sloppy 
+
+
+
+
+
+\usepackage[
+backend=biber,
+%style=authoryear-icomp,    % Zitierstil
+%style=verbose-trad2,
+%style=authoryear,
+%style=numeric,
+style=alphabetic,
+isbn=true,                % ISBN
+pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
+%maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
+%maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
+%autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
+%block=space,               % kleiner horizontaler Platz zwischen den Feldern
+backref=true,              % Seiten anzeigen, auf denen die Referenz vorkommt
+backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+%date=short,                % Datumsformat
+]{biblatex}
+
+\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
+\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
+
+\bibliography{literature}  % Bibtex-Datei wird schon in der Preambel eingebunden 
+\nocite{*}
+

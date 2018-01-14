@@ -1,0 +1,43 @@
+\newcommand{\titel}{DEFINED_TITLE}
+
+\newcommand*{\dozent}{Frau Bedi-Visschers}
+\newcommand*{\fach}{Interkulturelle Kommunikation}
+
+\newcommand*{\thesistitle}{Interkulturelle Kommunikation zwischen Entwicklungsstandorten \linebreak - \linebreak Am Beispiel von BSH Hausgeräte GmbH zwischen Regensburg und Indien}
+
+\newcommand*{\thesistitlehead}{Interkulturelle Kommunikation \linebreak zwischen Entwicklungsstandorten}
+
+\newcommand*{\thesistitleone}{Interkulturelle Kommunikation zwischen Entwicklungsstandorten - Am Beispiel von BSH Hausgeräte GmbH zwischen Regensburg und Indien}
+
+\newcommand*{\degree}{Master of Arts}
+\newcommand*{\masterfach}{Interkulturalitäts- und Entwicklungsmanagement}
+
+\newcommand*{\myname}{Thorsten Klein}
+\newcommand*{\univ}{OTH Regensburg}
+\newcommand*{\university}{Ostbayerischen Technischen Hochschule Regensburg}
+\newcommand*{\kurs}{IEM}
+\newcommand*{\matrikelnummer}{3153345}
+\newcommand*{\firma}{}
+\newcommand*{\module}{Hausarbeit}
+
+
+\newcommand*{\importslide}[1]{
+\newpage
+\begin{minipage}[t][][t]{\textwidth}
+\includepdf[pages={ #1 },pagecommand={
+\thispagestyle{scrheadings}}, clip, frame=true,
+offset=0mm 50mm, width=\textwidth]{images/T3000_Presentation.pdf} 
+\end{minipage}
+\vspace{92mm} %95 %\newline
+
+}
+
+\newcommand*{\importslidechapter}[2][Überschrift]{
+\newpage
+\begin{minipage}[t][][t]{\textwidth}
+\includepdf[pages=#1,pagecommand={\chapter{#2} \thispagestyle{scrheadings}}, clip, frame=true,
+offset=0mm 30mm, width=\textwidth]{images/T3000_Presentation.pdf} 
+\end{minipage} \\
+\vspace{100mm} %108 %\\
+
+}

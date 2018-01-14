@@ -1,0 +1,316 @@
+%-------------------------------------------------------------------------------------------------------------------
+% DOCUMENT SETTINGS
+%-------------------------------------------------------------------------------------------------------------------
+
+\documentclass[
+	12pt,				% Schriftgröße
+	a4paper,			% Papierformat
+	oneside,			% einseitiges Dokument
+	titlepage,			% es wird eine Titelseite verwendet
+	parskip=full,		% Abstand zwischen Absätzen (volle Zeile)=full halbe zeille = half
+	headings=normal,	% Größe der Überschriften verkleinern			
+	fleqn,				% eingebettete Formeln \[ Formel \ linksbündig
+	%bibtotoc,			% Literaturverzeichnis in TOC 
+	%bibtotocnumbered	% \bibliographystyle{alphadin} \bibliography{../bibliothek}
+	%openbib,			%
+	%abstractonx,			%???
+	final				% Status des Dokuments (final/draft)		
+]{scrreprt}
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% PACKAGES
+%-------------------------------------------------------------------------------------------------------------------
+\input{config/packages.tex}
+\usepackage{blindtext} % Blindtext
+%\usepackage{layout} % Layout anzeigen
+
+%-------------------------------------------------------------------------------------------------------------------
+% NEW COMMANDS
+%-------------------------------------------------------------------------------------------------------------------
+\input{config/newcommands.tex}
+
+%-------------------------------------------------------------------------------------------------------------------
+% ALLGEMEINE OPTIONEN
+%-------------------------------------------------------------------------------------------------------------------
+\pagestyle{scrheadings}
+\setstretch{1.5} % Line spacing of ...
+\setlength{\headheight}{1.1\baselineskip}
+\lstset{							%% EINBETTUNG VON CODE MIT LISTINGS
+	language=Python,
+	numbers=left,
+	breaklines=true,                % sets automatic line breaking
+	%numberstyle=\tiny,
+	%showstringspaces=false,
+	%numberblanklines=false, 
+    title=\lstname,
+	keywordstyle=\color{blue},          % keyword style
+  	commentstyle=\color[rgb]{0.02,0.65,0.2},       % comment style 
+  	stringstyle=\color[rgb]{0.8,0.6,1},
+  	xleftmargin=2cm,
+	%linewidth=\linewidth, 
+    breakatwhitespace=false,        % sets if automatic breaks should only happen
+	breakautoindent=true          % string literal style
+}      
+
+
+\renewcommand*{\chapterheadstartvskip}	{\vspace*{-1.5cm}}		%Abstände einstellen
+\renewcommand*{\chapterheadendvskip}	{\vspace*{0.5cm}}
+%\RedeclareSectionCommand[
+%  beforeskip =	 -1\baselineskip,
+%  afterskip  =	0.5\baselineskip]{section}
+%\RedeclareSectionCommand[
+%  beforeskip =	 -1\baselineskip,
+%  afterskip  =	0.5\baselineskip]{subsection}
+%\RedeclareSectionCommand[
+%  beforeskip =	 -1\baselineskip,
+%  afterskip  =	0.5\baselineskip]{subsubsection}
+%\RedeclareSectionCommand[
+%  beforeskip =	 -1\baselineskip,
+%  afterskip  =	0.5\baselineskip]{paragraph}
+%\RedeclareSectionCommand[
+%  beforeskip =	 -1\baselineskip,
+%  afterskip  =	0.5\baselineskip]{subparagraph}
+
+
+\makeatletter
+\renewcommand*{\@pnumwidth}{22pt} 	% Breite reserviert für Zahl im TOC
+\renewcommand*{\@tocrmarg}{50pt} 	% Mindestlänge der Punkte-Linie im TOC
+\renewcommand*{\@dotsep}{1}			% Punktabstand
+\makeatother
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% HILFREICHE SCHNIPSEL
+%-------------------------------------------------------------------------------------------------------------------
+%\begin{addmargin}[-1cm]{0cm}					% linken und rechten Rand verschieben
+
+%Schriftart Times Roman
+%\usepackage{mathptmx}
+%\usepackage[scaled=.90]{helvet}
+%\usepackage{courier}
+%\KOMAoptions{fontsize=40pt}						% KOMA-Optionen setzen
+%\onehalfspacing %Zeilenabstand 1,5 zeilig
+%\setkomafont{sectioning}{\normalcolor\bfseries} 			%Überschrift in Textkörperschrift???
+%\label{name}			%mit\PageRef{name}
+%\pagenumbering{Roman}
+%\clearpage
+%\pagenumbering{arabic}
+%\setcounter{page}{5}
+%\lstinputlisting[title={Der Quellcode 2},firstline=10,firstnumber=10, lastline=18]{Quellcode.m} 
+%\includepdf[pages={5},pagecommand={\thispagestyle{scrheadings}}, frame=true, width=\textwidth]{melli.pdf} 
+ 
+
+
+\begin{document}
+
+
+
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+% DECKBLATT
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------------------------------------------
+% GEOMETRIE 1
+%-------------------------------------------------------------------------------------------------------------------
+
+\newgeometry{ 								%lokale Änderung mit \addmargin
+  	left=2cm,			% linker Rand
+ 	right=2cm,			% rechter Rand
+  	top=2cm,			% Kopf
+  	bottom=2cm,			% Fuß
+	headheight=3cm,  	% Höhe der Kopfzeile
+  	bindingoffset=0mm	% Bindung
+}
+
+%-------------------------------------------------------------------------------------------------------------------
+% TITELSEITE
+%-------------------------------------------------------------------------------------------------------------------
+
+\input{content/titlepage.tex}
+
+
+
+%\layout
+
+
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+% BEGINN ERSTER TEIL
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------------------------------------------
+% GEOMETRIE (ERSTER TEIL)
+%-------------------------------------------------------------------------------------------------------------------
+
+\newgeometry{ 								%lokale Änderung mit \addmargin
+  	left=3cm,			% linker Rand
+ 	right=3cm,			% rechter Rand
+	%width=0cm,			% Breite des Textfensters
+	%height=0cm,		% Höhe des Textfensters
+	top=5cm,			% Seitenabstand oben --> Gesamtabstand bis Textanfang
+	headsep=1.5cm,		% Abstand Text zu Kopfzeile
+	headheight=3cm,  	% Höhe der Kopfzeile
+  	bottom=2.7cm,		% Seitenabstand unten
+  	footskip=1.2cm,		% Abstand Bottom zu Fußzeile
+  	bindingoffset=0mm		% Bindung
+}
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% KOPF-/FUSSZEILE FÜR ERSTEN TEIL
+%-------------------------------------------------------------------------------------------------------------------
+\clearscrheadfoot 
+\cleardoubleoddpage
+\pagenumbering{Roman} 
+\setcounter{page}{1}
+\input{config/header_footer_indexes.tex}
+
+%-------------------------------------------------------------------------------------------------------------------
+% SPERRVERMERK
+%-------------------------------------------------------------------------------------------------------------------
+%\cleardoubleoddpage
+%\phantomsection
+%\chapter*						{Sperrvermerk}
+%\addcontentsline{toc}{chapter}	{Sperrvermerk}
+%
+%\input{content/sperr.tex}
+
+%-------------------------------------------------------------------------------------------------------------------
+% EIDESSTATTLICHE ERKLÄRUNG
+%-------------------------------------------------------------------------------------------------------------------
+\cleardoubleoddpage
+\phantomsection
+\chapter*						{Eidesstattliche Erklärung}
+\addcontentsline{toc}{chapter}	{Eidesstattliche Erklärung}
+\input{content/erklaerung.tex}
+
+%-------------------------------------------------------------------------------------------------------------------
+% ABSTRACT
+%-------------------------------------------------------------------------------------------------------------------
+%\cleardoubleoddpage
+%\phantomsection
+%\chapter*						{Abstract}
+%\addcontentsline{toc}{chapter}	{Abstract}
+%\blindtext
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% ZUSAMMENFASSUNG
+%-------------------------------------------------------------------------------------------------------------------
+\cleardoubleoddpage
+\phantomsection
+\chapter*						{Zusammenfassung}
+\addcontentsline{toc}{chapter}	{Zusammenfassung}
+
+\input{content/zusammenfassung.tex}
+
+%-------------------------------------------------------------------------------------------------------------------
+% TABLE OF CONTENTS
+%-------------------------------------------------------------------------------------------------------------------
+\cleardoubleoddpage
+\phantomsection
+%\addcontentsline{toc}{chapter}{Table of Contents}
+\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{4}
+
+\begin{minipage}[t][][t]{0.95\textwidth}
+%\setstretch{1} % Line spacing of ...
+\tableofcontents
+\end{minipage}
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% ABKÜRZUNGEN
+%-------------------------------------------------------------------------------------------------------------------
+\cleardoubleoddpage
+\chapter*						{Abkürzungsverzeichnis}
+\addcontentsline{toc}{chapter}	{Abkürzungsverzeichnis}
+\input{content/abkuerzungen.tex}
+
+
+%%-------------------------------------------------------------------------------------------------------------------
+%% FORMULAR AUFGABENSTELLUNG
+%%-------------------------------------------------------------------------------------------------------------------
+%\cleardoubleoddpage
+%%\chapter*						{Formular Aufgabenstellung}
+%%\addcontentsline{toc}{chapter}	{Formular Aufgabenstellung}
+%
+%
+%\includepdf[pages={1},pagecommand={\chapter{Assignment} \thispagestyle{scrheadings}}, clip, frame=false,
+%offset=0mm -10mm, width=1.2\textwidth]{images/Anmeldung_ProjektarbeitStudienarbeitBachelorarbeit.pdf}
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+% BEGINN ZWEITER TEIL
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% KOPF-/FUSSZEILE FÜR ZWEITEN TEIL
+%-------------------------------------------------------------------------------------------------------------------
+\cleardoubleoddpage
+\input{config/header_footer_content.tex}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% INHALT ZWEITER TEIL
+%-------------------------------------------------------------------------------------------------------------------
+
+%\cleardoubleoddpage
+%\chapter*{Verzeichnisse}
+%\addcontentsline{toc}{chapter}	{Verzeichnisse}
+%List of Figures? List of Tables?
+
+\input{content/praesentation.tex}
+
+
+
+
+%-------------------------------------------------------------------------------------------------------------------
+% LITERATURVERZEICHNIS
+%-------------------------------------------------------------------------------------------------------------------
+\cleardoubleoddpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\listoffigures
+
+%-------------------------------------------------------------------------------------------------------------------
+% LITERATURVERZEICHNIS
+%-------------------------------------------------------------------------------------------------------------------
+\cleardoubleoddpage
+%\chapter*{List of Literature}
+\phantomsection
+%\addcontentsline{toc}{chapter}	{Bibliography}
+\addcontentsline{toc}{chapter}	{Literaturverzeichnis}
+\setstretch{1.1}
+\renewcommand{\bibfont}{\normalfont\small}
+
+\nocite{*} % print all literature
+\printbibliography
+
+%-------------------------------------------------------------------------------------------------------------------
+% ANHANG
+%-------------------------------------------------------------------------------------------------------------------
+
+\label{LastPage}
+\end{document}
